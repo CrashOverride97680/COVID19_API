@@ -34,7 +34,6 @@
         windowMs: 15 * 60 * 1000,
         max: 100 
     });
-app.use(limiter);
 // IMPORTING LANG AND DEBUG
     const langServer = `./lang/${( process.env.LANG_SERVER || 'eng' )}`;
     const lang = require(langServer);
@@ -99,6 +98,8 @@ app.use(limiter);
     .use(bodyParser.urlencoded({ extended: true }));
     app
     .use(bodyParser.json());
+    app
+    .use(limiter);
 //  ROUTER ENTRYPOINT
     app
     .use('/api', router);
