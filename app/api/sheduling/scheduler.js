@@ -11,7 +11,7 @@ module.exports = () => {
 
     schedule.scheduleJob('* * 5 * * *', () => {
         axios
-            .get(process.env.NODE_APIGIT)
+            .get(process.env.NODE_APIGIT_PROVICE)
             .then(resp => 
             {
                 if ( process.env.NODE_ENV_DEV_API_CALL )
@@ -33,5 +33,5 @@ module.exports = () => {
             })
             .cath(err => console.log(lang.LABEL_CATH_CRON, err));
     });
-    
+
 };

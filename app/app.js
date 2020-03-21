@@ -9,11 +9,7 @@
     const dotenv = require('dotenv').config();
     const log4js = require('log4js');
     const cron = require('./api/sheduling/scheduler');
-    const FileSync = require('lowdb/adapters/FileSync');
-    const low = require('lowdb');
-    const adapter = new FileSync('./api/data/db.json');
     const router = require('./api/router/router'); 
-    const db = low(adapter);
     log4js.configure({
         appenders: { 
             error: { 
@@ -34,36 +30,29 @@
         windowMs: 15 * 60 * 1000,
         max: 100 
     });
+    const db = require('./api/data/data')
 // IMPORTING LANG AND DEBUG
     const langServer = `./lang/${( process.env.LANG_SERVER || 'eng' )}`;
     const lang = require(langServer);
     if (process.env.NODE_ENV_DEV || process.env.NODE_DEV_ENV_VAR)
         console.log(lang.LABEL_LANGUAGE_SETTED, lang.LABEL_LANG);
 //  RESET DB
-    db
-    .defaults({ cases: [] })
-    .write();
+    db.reset();
 // FIRST LOAD
     axios
-        .get(process.env.NODE_APIGIT)
+        .get(process.env.NODE_APIGIT_PROVICE)
         .then(resp => 
         {
             if ( process.env.NODE_ENV_DEV_API_CALL )
                 console.log(lang.LABEL_FIRST_LOAD, resp);
-
-            db
-            .get('cases')
-            .remove()
-            .write();
             
+                db.removeAll();
             resp
             .data
-            .forEach(el => db.get('cases')
-                             .push(el)
-                             .write());
-            
+            .forEach(el => db.insert(el));
+    
             if ( process.env.NODE_ENV_DEV )
-                console.log(lang. LABEL_FIRST_LOAD_DATA_INSERTED, db.get('cases').size().value());
+                console.log(lang. LABEL_FIRST_LOAD_DATA_INSERTED, db.size());
         })
         .catch(err => console.log(lang.LABEL_CATH_CRON, err));
 // CRON DATA
@@ -103,7 +92,6 @@
 //  ROUTER ENTRYPOINT
     app
     .use('/api', router);
-    //app.use('/api', router);
     /*app
     .use(express.static(path.join(__dirname, 'public')));*/
 // GENERAL VARIABLE AND SETTING CONF
