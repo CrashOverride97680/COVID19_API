@@ -29,6 +29,12 @@
         }
     });
     const logger = log4js.getLogger('error');
+    const rateLimit = require("express-rate-limit");
+    const limiter = rateLimit({
+        windowMs: 15 * 60 * 1000,
+        max: 100 
+    });
+app.use(limiter);
 // IMPORTING LANG AND DEBUG
     const langServer = `./lang/${( process.env.LANG_SERVER || 'eng' )}`;
     const lang = require(langServer);
