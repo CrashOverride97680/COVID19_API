@@ -1,13 +1,16 @@
 // IMPORT MODULES NODEJS AND INIZIALIZE
     const express = require('express');
     const router = express.Router();
+    const controller = require('../controller/controller');
 //  ENTRYPOINT GET
 //  ENTRYPOINT GET
     router
     .get('/province', (req, resp) => 
     { 
-        resp.json({result: 'Server Running!'})
+        const data = controller.controllerAllProvince();
+        resp.json(data);
     });
+
 //  ENTRYPOINT POST
 //  ENTRYPOINT PUT
 //  ENTRYPOINT DELETE

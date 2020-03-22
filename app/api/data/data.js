@@ -2,6 +2,7 @@
     const FileSync = require('lowdb/adapters/FileSync');
     const low = require('lowdb');    
     const adapter = new FileSync(__dirname + '/db.json');
+    
     const db = low(adapter);
 //  EXPORTING NODE MODULE
 module.exports =  {
@@ -26,5 +27,7 @@ module.exports =  {
         const data = db.get('cases').size().value();
         return data;
     },
+
+    dbAllProvince: () => db.get('cases').value(),
 
 };

@@ -9,7 +9,7 @@ const lang = require(langServer);
 
 module.exports = () => {
 
-    schedule.scheduleJob('* * 5 * * *', () => {
+    schedule.scheduleJob('* * 1 * * *', () => {
         axios
             .get(process.env.NODE_APIGIT_PROVICE)
             .then(resp => 
