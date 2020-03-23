@@ -6,5 +6,5 @@ services:
     volumes: 
       - ./app:/src
     ports:
-      - "8080:9000"
+      - "9000:9000"
     command: bash -c "npm install && npm run dev"

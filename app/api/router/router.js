@@ -5,7 +5,7 @@
 //  ENTRYPOINT GET
 //  ENTRYPOINT GET
     router
-    .get('/province', (req, resp) => 
+    .get('/province/all', (req, resp) => 
     { 
         const data = controller.controllerAllProvince();
         resp.json(data);
