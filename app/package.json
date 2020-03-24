@@ -1,7 +1,7 @@
 {
   "name": "covid19",
   "version": "1.0.0",
-  "description": "COVID19 Api with espress, receive update all day with new datas.",
+  "description": "COVID19 Api with espress, receive update all days with new datas.",
   "main": "app.js",
   "dependencies": {
     "axios": "^0.19.2",
