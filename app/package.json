@@ -1,7 +1,7 @@
 {
   "name": "covid19",
   "version": "1.0.0",
-  "description": "",
+  "description": "COVID19 Api with espress, receive update all day with new datas.",
   "main": "app.js",
   "dependencies": {
     "axios": "^0.19.2",
@@ -24,11 +24,15 @@
   "devDependencies": {
     "nodemon": "^2.0.2"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/CrashOverride97680/COVID19_API.git"
+  },
   "scripts": {
     "dev": "nodemon app.js --ignore api/data/db.json --watch . --watch .env",
     "start": "node app.js",
     "test": "mocha --exit"
   },
-  "author": "",
+  "author": "Crashoverride97680",
   "license": "ISC"
 }
