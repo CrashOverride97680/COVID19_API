@@ -1,7 +1,6 @@
 // IMPORT NODEJS MODULES
     const request = require('supertest');
     const express = require('express');
-    const random = require('random');
     const app = require('../app');
 // IMPORTING LANG AND DEBUG
     const dotenv = require('dotenv').config();
