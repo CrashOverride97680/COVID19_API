@@ -3,14 +3,12 @@
     const router = express.Router();
     const controller = require('../controller/controller');
 //  ENTRYPOINT GET
-//  ENTRYPOINT GET
     router
-    .get('/province/all', (req, resp) => 
+    .get('/v1/province/all', (req, resp) => 
     { 
         const data = controller.controllerAllProvince();
         resp.json(data);
     });
-
 //  ENTRYPOINT POST
 //  ENTRYPOINT PUT
 //  ENTRYPOINT DELETE
