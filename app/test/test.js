@@ -21,5 +21,27 @@ describe(lang.LABEL_TEST_API, () => {
                 .expect(200, done);
             }).timeout(10000);
         });
+
+        describe(lang.LABEL_TEST_API_GET_REGION_ALL, () => {
+            it(lang.LABEL_TEST_API_REGION_ALL_INFO, done =>
+            {
+                request(app)
+                .get('/api/v1/region/all')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+            }).timeout(10000);
+        });
+
+        describe(lang.LABEL_TEST_API_GET_NATIONAL_ALL, () => {
+            it(lang.LABEL_TEST_API_NATIONAL_ALL_INFO, done =>
+            {
+                request(app)
+                .get('/api/v1/national/all')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+            }).timeout(10000);
+        });
     });
 });
