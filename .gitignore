@@ -1,2 +1,3 @@
 /app/node_modules
 /app/api/data/db.json
+/app/package-lock.json
