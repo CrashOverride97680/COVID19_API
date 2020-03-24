@@ -8,27 +8,31 @@
 module.exports =  {
     
     reset: () => {
-        db.defaults({ cases: [] }).write();
+        db.defaults({ cases_province: [], cases_region:[], cases_national: [] }).write();
     },
 
-    removeAll: () => {
+    removeAll: name => {
         db
-        .get('cases')
+        .get(name)
         .remove()
         .write();
     },
 
-    insert: data => {
-        db.get('cases')
+    insert: ( { name, data  } ) => {
+        db.get(name)
         .push(data)
         .write();
     },
 
-    size: () => {
-        const data = db.get('cases').size().value();
+    size: name => {
+        const data = db.get(name).size().value();
         return data;
     },
 
-    dbAllProvince: () => db.get('cases').value(),
+    dbAllProvince: () => db.get('cases_province').value(),
+
+    dbAllRegion: () => db.get('cases_region').value(),
+
+    dbAllNational: () => db.get('cases_national').value(),
 
 };

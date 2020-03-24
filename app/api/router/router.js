@@ -9,6 +9,20 @@
         const data = controller.controllerAllProvince();
         resp.json(data);
     });
+
+    router
+    .get('/v1/region/all', (req, resp) => 
+    { 
+        const data = controller.controllerAllRegion();
+        resp.json(data);
+    });
+
+    router
+    .get('/v1/national/all', (req, resp) => 
+    { 
+        const data = controller.controllerAllNational();
+        resp.json(data);
+    });
 //  ENTRYPOINT POST
 //  ENTRYPOINT PUT
 //  ENTRYPOINT DELETE
