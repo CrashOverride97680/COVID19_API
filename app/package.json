@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "nodemon app.js --ignore api/data/db.json --watch . --watch .env",
     "start": "node app.js",
-    "test": "mocha",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC"

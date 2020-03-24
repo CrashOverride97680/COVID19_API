@@ -16,7 +16,7 @@ describe(lang.LABEL_TEST_API, () => {
             it(lang.LABEL_TEST_API_PROVINCE_ALL_INFO, done =>
             {
                 request(app)
-                .get('/api/v1/all')
+                .get('/api/v1/province/all')
                 .set('Accept', 'application/json')
                 .expect('Content-Type', /json/)
                 .expect(200, done);
