@@ -116,8 +116,7 @@
     app
     .use(compression({filter: shouldCompress}));
     app
-    .use((req, res, next) =>  
-    {
+    .use((req, res, next) =>  {
         res
         .header('Access-Control-Allow-Origin', "*");
         res
@@ -135,8 +134,13 @@
 //  ROUTER ENTRYPOINT
     app
     .use('/api', router);
-    /*app
-    .use(express.static(path.join(__dirname, 'public')));*/
+// ----> 404
+    app
+    .get('*', (req, resp) => resp.status(404).json({res: 'Message 404 route not found', server: 'Work'}));
+/*  
+    app
+    .use(express.static(path.join(__dirname, 'public')));
+*/
 // GENERAL VARIABLE AND SETTING CONF
     const port =  process.env.port || process.env.PORT || 9000;
     app.set('PORT', port);

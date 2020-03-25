@@ -35,4 +35,9 @@ module.exports =  {
 
     dbAllNational: () => db.get('cases_national').value(),
 
+    find: ( el, data ) => { 
+        const dataFind = db.get(el).filter(data).value();
+        return dataFind;
+    },
+
 };

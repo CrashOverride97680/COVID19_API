@@ -25,8 +25,8 @@
     "nodemon": "^2.0.2"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/CrashOverride97680/COVID19_API.git"
+    "type": "git",
+    "url": "https://github.com/CrashOverride97680/COVID19_API.git"
   },
   "scripts": {
     "dev": "nodemon app.js --ignore api/data/db.json --watch . --watch .env",
