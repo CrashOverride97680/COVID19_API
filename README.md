@@ -32,14 +32,14 @@ npm i
 
 ### REQUEST GET
 
- - Return all province JSON:  /api/province/all
- - Return all region JSON: /api/province/all
- - Return all national JSON: /api/national/all
+ - Return all province JSON:  **/api/province/all**
+ - Return all region JSON: **/api/province/all**
+ - Return all national JSON: **/api/national/all**
 
 ## DEFAULT VALUE
 
- - Port 9000
- - Language ENG
+ - Port **9000**
+ - Language **ENG**
 
 ## SETTINGS
 Use file **.env** for setting some values ​​in the file itself.
