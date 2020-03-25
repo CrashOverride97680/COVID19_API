@@ -136,7 +136,7 @@
     .use('/api', router);
 // ----> 404
     app
-    .get('*', (req, resp) => resp.status(404).json({res: 'Message 404 route not found', server: 'Work'}));
+    .get('*', (req, resp) => resp.status(404).json({res: lang.LABEL_JSON_STATUS_NUMBER, server: lang.LABEL_JSON_STATUS}));
 /*  
     app
     .use(express.static(path.join(__dirname, 'public')));

@@ -43,5 +43,38 @@ describe(lang.LABEL_TEST_API, () => {
                 .expect(200, done);
             }).timeout(10000);
         });
+
+        describe(lang.LABEL_TEST_API_GET_PROVINCE_NAME, () => {
+            it(lang.LABEL_TEST_API_PROVINCE_NAME_INFO, done =>
+            {
+                request(app)
+                .get('/api/v1/province/name/trapani')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+            }).timeout(10000);
+        });
+
+        describe(lang.LABEL_TEST_API_GET_PROVINCE_REGION_NAME, () => {
+            it(lang.LABEL_TEST_API_PROVINCE_REGION_NAME_INFO, done =>
+            {
+                request(app)
+                .get('/api/v1/province/regionName/sicilia')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+            }).timeout(10000);
+        });
+
+        describe(lang.LABEL_TEST_API_GET_REGION_REGION_NAME, () => {
+            it(lang.LABEL_TEST_API_REGION_REGION_NAME_INFO, done =>
+            {
+                request(app)
+                .get('/api/v1/region/denRegion/sicilia')
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+            }).timeout(10000);
+        });
     });
 });

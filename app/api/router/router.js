@@ -37,7 +37,7 @@
             resp.json(data);
         })
     // API TEST
-        .get('/serverStatus', (req, resp) => resp.json({res: 'Request get ok', testing:true, server: 'Work'}))
+        .get('/serverStatus', (req, resp) => resp.json({res: 'Request get ok', testing:true, server: 'Work'}));
 //  ENTRYPOINT POST
 //  ENTRYPOINT PUT
 //  ENTRYPOINT DELETE
