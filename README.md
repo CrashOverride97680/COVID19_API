@@ -21,7 +21,7 @@ docker image build -t ./app/Dockerfile .
 docker run name image docker -d
 ```
 
-## :wrench: MANUAL INSTALLTION
+## :wrench: MANUAL INSTALLATION
 ```script
 cd app
 ```
