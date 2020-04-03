@@ -33,7 +33,7 @@ npm i
 ### REQUEST GET
 
  - Return all province JSON:  **/api/province/all**
- - Return all region JSON: **/api/province/all**
+ - Return all region JSON: **/api/region/all**
  - Return all national JSON: **/api/national/all**
  - Return all province with name JSON: **/api/province/name/:name**
  - Return all data with region name JSON: **/v1/province/regionName/:name**
