@@ -32,12 +32,12 @@ npm i
 
 ### REQUEST GET
 
- - Return all province JSON:  **/api/province/all**
- - Return all region JSON: **/api/region/all**
- - Return all national JSON: **/api/national/all**
- - Return all province with name JSON: **/api/province/name/:name**
- - Return all data with region name JSON: **/v1/province/regionName/:name**
- - Return all data with region name JSON: **/v1/region/denRegion/:name**
+ - Return all province JSON:  **/api/v1/province/all**
+ - Return all region JSON: **/api/v1/region/all**
+ - Return all national JSON: **/api/v1/national/all**
+ - Return all province with name JSON: **/api/v1/province/name/:name**
+ - Return all data with region name JSON: **/api/v1/province/regionName/:name**
+ - Return all data with region name JSON: **/api/v1/region/denRegion/:name**
 
 ## :hammer: DEFAULT VALUE
 
